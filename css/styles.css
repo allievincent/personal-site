@@ -1,0 +1,217 @@
+:root {
+    --background: #eeeeee;
+    --text: #111111;
+    --blue: #c5e8fb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+h4 {
+    font-size: 1.15rem;
+}
+
+main,
+.nav,
+.site-footer {
+    width: 90%;
+    max-width: 65rem;
+    margin: auto;
+}
+
+/* Navigation */
+.site-header {
+    position: sticky;
+    top: 0;
+    background: var(--blue);
+    color: #111111;
+    z-index: 1;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links,
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links {
+    margin: 0.5rem 0;
+}
+
+/* Skip link */
+.skip-link {
+    position: fixed;
+    top: -5rem;
+    left: 1rem;
+    background: var(--blue);
+    color: #111111;
+    padding: 0.5rem;
+    z-index: 2;
+}
+
+.skip-link:focus {
+    top: 0.5rem;
+}
+
+/* Sections */
+section {
+    padding: 2rem 0;
+    scroll-margin-top: 10rem;
+}
+
+.section,
+.site-footer {
+    border-top: 1px solid var(--text);
+}
+
+.intro,
+.resume-layout,
+.project-list,
+.about-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.headshot {
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
+    align-self: center;
+}
+
+.intro-text,
+.resume-layout > div,
+.about-layout > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.card,
+.experience,
+.additional-info {
+    padding: 1rem;
+    border: 1px solid var(--text);
+    margin-bottom: 1rem;
+}
+
+.section-label,
+.organization,
+.project-tools,
+summary {
+    font-weight: bold;
+}
+
+summary {
+    cursor: pointer;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+.button {
+    display: inline-block;
+    background: var(--blue);
+    color: #111111;
+    padding: 0.5rem 1rem;
+}
+
+.site-footer {
+    padding: 1rem 0;
+}
+
+/* Tablet */
+@media (min-width: 40rem) {
+    .nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    section {
+        scroll-margin-top: 6rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .project-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .project-card {
+        flex: 1 1 45%;
+    }
+}
+
+/* Desktop */
+@media (min-width: 64rem) {
+    .intro,
+    .resume-layout,
+    .about-layout {
+        flex-direction: row;
+    }
+
+    .intro {
+        align-items: center;
+    }
+
+    .headshot {
+        width: 35%;
+    }
+
+    .project-card {
+        flex-basis: 30%;
+    }
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #222222;
+        --text: #eeeeee;
+    }
+}
